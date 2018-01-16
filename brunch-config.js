@@ -10,5 +10,13 @@ exports.files = {
 };
 
 exports.plugins = {
-  babel: {presets: ['latest', 'react']}
+  babel: {presets: ['latest', 'react']},
+  postcss: {
+    modules: {
+      generateScopedName: '[name]__[local]___[hash:base64:5]'
+    },
+    processors: [
+      require('autoprefixer')(['last 10 versions']),
+    ]
+  }
 };

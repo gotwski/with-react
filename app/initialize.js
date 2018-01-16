@@ -1,7 +1,12 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import App from 'components/App';
+import { BrowserRouter, Route } from 'react-router-dom'
+import Home from './containers/Home'
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<App />, document.querySelector('#app'));
+  ReactDOM.render((
+    <BrowserRouter>
+      <Route path="/" component={Home}/>
+     </BrowserRouter>
+  ), document.querySelector('#app'));
 });
